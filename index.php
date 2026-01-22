@@ -2,7 +2,7 @@
 <html lang="en">
 <?php include __DIR__ . "/components/head.php"; ?>
 <body>
-
+<?php include __DIR__ . "/components/auth-modal.php"; ?>
 <?php include __DIR__ . "/components/header.php"; ?>
 <?php include __DIR__ . "/components/hero.php"; ?>
 <?php include __DIR__ . "/components/body-type.php"; ?>
