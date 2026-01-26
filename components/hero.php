@@ -1,84 +1,66 @@
- <!-- Hero Section  -->
-  <section class="hero" aria-label="Hero">
-    <div class="hero__bg" role="img" aria-label="Car background"></div>
+<!-- hero.php -->
+<?php
+// slides (example)
+$slides = [
+  "./assets/images/hero/slide-1.jpg",
+  "./assets/images/hero/slide-2.jpg",
+  "./assets/images/hero/slide-3.jpg",
+];
+?>
 
-    <div class="hero__container">
-      <!-- Left: Search Card -->
-      <div class="hero-card" aria-label="Find your right car">
-        <h2 class="hero-card__title">Find your right car</h2>
 
-        <div class="hero-tabs" role="tablist" aria-label="New or Used">
-          <button class="hero-tab hero-tab--active" role="tab" aria-selected="true" type="button">
-            New
-          </button>
-          <button class="hero-tab" role="tab" aria-selected="false" type="button">
-            Used
-          </button>
+
+<section class="w-full bg-transparent py-6 font-figtree">
+  <div class="w-full max-w-[1304px] ">
+    <div class="hero-carousel relative overflow-hidden rounded-2xl bg-neutral-900 shadow-lg ring-1 ring-black/10">
+
+      <!-- Slider -->
+      <div class="h-[160px] sm:h-[260px] lg:h-[480px]">
+        <div class="hero-track flex h-full w-full">
+          <?php foreach ($slides as $src): ?>
+            <div class="relative h-full w-full shrink-0">
+              <img src="<?= htmlspecialchars($src) ?>" alt="Hero slide" class="h-full w-full object-cover" />
+              <div class="pointer-events-none absolute inset-0 bg-gradient-to-r from-black/70 via-black/25 to-transparent"></div>
+            </div>
+          <?php endforeach; ?>
         </div>
-
-        <div class="hero-radio">
-          <label class="radio">
-            <input type="radio" name="mode" checked />
-            <span class="radio__dot"></span>
-            <span class="radio__text">By Budget</span>
-          </label>
-
-          <label class="radio">
-            <input type="radio" name="mode" />
-            <span class="radio__dot"></span>
-            <span class="radio__text">By Model</span>
-          </label>
-        </div>
-
-        <div class="hero-fields">
-          <div class="select">
-            <select>
-              <option selected disabled>Select a Budget</option>
-              <option>10–20 Lakhs</option>
-              <option>20–30 Lakhs</option>
-              <option>30–50 Lakhs</option>
-            </select>
-            <span class="select__caret" aria-hidden="true"></span>
-          </div>
-
-          <div class="select">
-            <select>
-              <option selected disabled>Select a Vehicle Type</option>
-              <option>SUV</option>
-              <option>Sedan</option>
-              <option>Hatchback</option>
-            </select>
-            <span class="select__caret" aria-hidden="true"></span>
-          </div>
-        </div>
-
-        <button class="hero-search" type="button">
-          <span class="hero-search__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none">
-              <path d="M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15Z" stroke="currentColor" stroke-width="2" />
-              <path d="M16.5 16.5 21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-            </svg>
-          </span>
-          <span>Search</span>
-        </button>
-
-        <a class="hero-advanced" href="#">
-          <span>Advanced Search</span>
-          <span class="hero-advanced__arrow" aria-hidden="true">→</span>
-        </a>
       </div>
 
-      <!-- Right: Headline -->
-      <div class="hero-copy">
-        <h1 class="hero-copy__title">
-          Lets Us help you find a
-          <span class="hero-copy__hl">Car</span><br />
-          <span class="hero-copy__hl">that suits you</span>
-          and your needs.
-        </h1>
-        <p class="hero-copy__sub">
-          Save on buying your dream car with Car Hamro.
-        </p>
+      <!-- ✅ Hero Search Card (DESKTOP ONLY) -->
+      <div class="absolute left-10 top-1/2 -translate-y-1/2 z-30 hidden lg:block">
+        <div class="w-[318px] h-[381px]">
+          <?php include __DIR__ . "/hero-search-card.php"; ?>
+        </div>
       </div>
+
+      <!-- ✅ Hero Text (LEFT aligned + pushed right on lg to avoid the card) -->
+      <div class="pointer-events-none absolute inset-x-0 bottom-10 sm:bottom-12 z-20">
+        <div class="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8 ">
+          <div class="w-[3xs] sm:w-xs max-w-[420px] text-left lg:ml-[420px]  ">
+            <div class="text-white font-bold leading-[1.1] text-[16px] sm:text-[26px] md:text-[30px]">
+              Buy &amp; Sell Cars in Nepal
+            </div>
+
+            <div class="hidden lg:block mt-1 text-amber-500 font-bold leading-[1.1] text-[16px] sm:text-[34px] md:text-[30px]
+                        underline decoration-amber-500 decoration-[3px] underline-offset-[6px]">
+              New &amp; Used Car Listings
+            </div>
+
+            <div class="mt-3 text-white/95 font-normal text-[10px] sm:text-[13px] leading-tight">
+              Save on buying your dream car with Car Hamro.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dots -->
+      <div class="absolute bottom-4 left-1/2 z-20 flex -translate-x-1/2 gap-2">
+        <span class="h-2 w-2 rounded-full bg-white/70"></span>
+        <span class="h-2 w-2 rounded-full bg-white/30"></span>
+        <span class="h-2 w-2 rounded-full bg-white/30"></span>
+      </div>
+
+      <div class="pointer-events-none absolute inset-0 z-10 ring-1 ring-white/10"></div>
     </div>
-  </section>
+  </div>
+</section>

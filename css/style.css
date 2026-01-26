@@ -1,0 +1,165 @@
+html,
+body {
+  overflow-x: hidden; /* prevents accidental horizontal */
+  scroll-behavior: smooth;
+}
+body {
+  font-family:
+    "Jost",
+    system-ui,
+    -apple-system,
+    Segoe UI,
+    Roboto,
+    Arial,
+    sans-serif;
+  overflow-y: auto; /* keep normal page scroll */
+  scrollbar-gutter: stable; /* avoids layout jump; safe if supported */
+}
+
+/* Hide only the visual scrollbar on the right (still scrollable) */
+body::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+body {
+  -ms-overflow-style: none; /* IE/Edge legacy */
+  scrollbar-width: none; /* Firefox */
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+@font-face {
+  font-family: "Figtree";
+  src: url("assets/fonts/Figtree-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Figtree";
+  src: url("./assets/fonts/Figtree-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Figtree";
+  src: url("./assets/fonts/Figtree-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-figtree {
+  font-family:
+    Figtree,
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    Arial,
+    sans-serif;
+}
+.tabs-row::-webkit-scrollbar {
+  height: 0;
+}
+.tabs-row {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.thumb-btn {
+  font-size: 0;
+}
+
+.spec-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 16px;
+  padding: 12px 0;
+  align-items: center;
+}
+.spec-label {
+  color: #6b7280; /* gray-500 */
+  font-size: 14px;
+}
+.spec-value {
+  color: #111827; /* gray-900 */
+  font-size: 14px;
+  font-weight: 500;
+  text-align: right;
+  white-space: nowrap;
+}
+.spec-tab {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 14px 16px;
+  font-size: 14px;
+  color: #6b7280;
+  /* gray-500 */
+  background: transparent;
+  border-bottom: 1px solid #e5e7eb;
+  /* gray-200 */
+  position: relative;
+  text-align: left;
+}
+
+.spec-tab:last-child {
+  border-bottom: none;
+}
+
+.spec-tab:hover {
+  color: #111827;
+}
+
+/* gray-900 */
+
+/* Active: orange bar + right pointer */
+.spec-tab.is-active {
+  background: #f59e0b;
+  /* orange */
+  color: #fff;
+  font-weight: 600;
+}
+
+.spec-tab.is-active::after {
+  content: "";
+  position: absolute;
+  right: -16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 16px solid transparent;
+  border-bottom: 16px solid transparent;
+  border-left: 16px solid #f59e0b;
+}
+
+/* font  */
+.font-jost {
+  font-family:
+    "Jost",
+    system-ui,
+    -apple-system,
+    Segoe UI,
+    Roboto,
+    Arial,
+    sans-serif;
+}
+.font-sulphur-point {
+ font-family: "Sulphur Point", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+ 
+}
+h1, h2, h3, h4, h5, h6,
+.font-heading {
+  font-family: "Sulphur Point", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-family: "Outfit", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
